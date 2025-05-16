@@ -3,6 +3,8 @@ title: "Connecting Databases to FiveM"
 description: "here are the instructions for it! (entering here, you should read quickstart first!) "
 ---
 
+### **EN**
+
 ## Author
 
 - Guide by: **itz_Secret**
@@ -49,4 +51,47 @@ description: "here are the instructions for it! (entering here, you should read 
 
 1. Click or Copy the ip link.
 2. enter put the code configure all.
-3. Enjoy \! 
+3. Enjoy \!
+
+### **ES**
+
+
+## 1. Creación de una base de datos MariaDB en CreeperCloud
+
+1. Visite https://creepercloud.io/ e inicie sesión en su tablero.
+2. Navegue a la sección **Tipos de servidor**.
+3. Haga clic en **MariaDB**.
+
+<img
+  src="/imágenes/Captura de pantalla2025-05-16183957.png"
+  alt="Captura de pantalla 2025-05-16 183957.png"
+  title="Captura de pantalla 2025-05-16 183957.png"
+  style={{ ancho:"83%" }}
+/>
+
+1. Configure su base de datos con:
+   - Nombre (por ejemplo, ivfivem_dbam)
+   - Nombre de usuario y contraseña (usar credenciales fuertes)
+2. Una vez creada la base de datos, tome nota de:
+   - Anfitrión/IP
+   - Puerto
+   - Nombre de usuario
+   - Contraseña
+   - Nombre de la base de datos
+
+----
+
+## 2. Conectando la Base de Datos a su Servidor FiveM
+
+1. Abre tu archivo 'sserver.cfggal.
+2. Agregue la siguiente línea (reemplace con sus valores reales):
+
+   ''adivinocfg
+   set mysql_connection_string "server=HOST;uid=USERNAME;password=PASSWORD;database=DBNAME"
+   ''gráfico
+
+## 3. Inicie el servidor
+
+1. Haga clic o copie el enlace ip.
+2. ingrese poner el código configurar todo.
+3. ¡Disfruta \! 

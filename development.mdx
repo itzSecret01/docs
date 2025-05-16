@@ -1,107 +1,46 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Connecting Databases to FiveM"
+description: "here are the instructions for it! "
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. <br />
-  Please upgrade to ```docs.json``` before proceeding and delete the legacy ```mint.json``` file.
-</Info>
+## Author
 
-Follow these steps to install and run Mintlify on your operating system:
+- Guide by: **itz_Secret**
+- Discord: `itz_Secret`
+- Hosting: [CreeperCloud](https://creepercloud.io/)
 
-**Step 1**: Install Mintlify:
+---
 
-<CodeGroup>
+## 1. Creating a MariaDB Database on CreeperCloud
 
-  ```bash npm
-  npm i -g mintlify
-  ```
+1. Visit https://creepercloud.io/ and log into your dashboard.
+2. Navigate to the **Server Types** section.
+3. Click on **MariaDB**.
 
-```bash yarn
-yarn global add mintlify
-```
+<img
+  src="/images/Screenshot2025-05-16183957.png"
+  alt="Screenshot 2025-05-16 183957.png"
+  title="Screenshot 2025-05-16 183957.png"
+  style={{ width:"91%" }}
+/>
 
-</CodeGroup>
+1. Set up your database with:
+   - Name (e.g. `fivem_db`)
+   - Username and password (use strong credentials)
+2. Once the database is created, take note of:
+   - Host/IP
+   - Port
+   - Username
+   - Password
+   - Database Name
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+---
 
-```bash
-mintlify dev
-```
+## 2. Connecting the Database to Your FiveM Server
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+1. Open your `server.cfg` file.
+2. Add the following line (replace with your actual values):
 
-### Custom Ports
-
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
-
-```bash
-mintlify dev --port 3333
-```
-
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
-
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
-
-## Mintlify Versions
-
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
-
-<CodeGroup>
-
-```bash npm
-npm i -g mintlify@latest
-```
-
-```bash yarn
-yarn global upgrade mintlify
-```
-
-</CodeGroup>
-
-## Validating Links
-
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
-
-```bash
-mintlify broken-links
-```
-
-## Deployment
-
-<Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
-</Tip>
-
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code Formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
-
-## Troubleshooting
-
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+   ```cfg
+   set mysql_connection_string "server=HOST;uid=USERNAME;password=PASSWORD;database=DBNAME"
+   ```

@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Fivem"
-description: "Welcome to the docs of fivem servers in creepercloud"
+title: "Introduction to FiveM"
+description: "Welcome to the docs of FiveM servers in Creepercloud"
 ---
 
 <img
@@ -17,95 +17,43 @@ description: "Welcome to the docs of fivem servers in creepercloud"
   alt="Hero Dark"
 />
 
-## 🇺🇸 How to Create and Connect Databases to FiveM in\
-CreeperCloud
+## # Introduction to FiveM
 
-**Author:** itz_Secret\
-**Discord:** `itz_Secret`\
-**Hosting Provider:** [CreeperCloud](https://creepercloud.io/)
+## 🇺🇸 About This Project
 
-### 🛠️ Creating a MySQL Database on CreeperCloud
+Welcome to the documentation for the **FiveM servers configurations for CreeperCloud**\
+created by **itz_Secret**.  
 
-1. Go to https://creepercloud.io/ and log in to your dashboard.
-2. Navigate to **Databases**.
-3. Click **Create Database**.
-4. Set:
-   - **Name:** something like `fivem_db`
-   - **Username** and **Password:** choose secure credentials
-5. Once created, copy the following:
-   - **Host/IP**
-   - **Port**
-   - **Username**
-   - **Password**
-   - **Database name**
+This documentation is designed to guide you through every step needed to properly configure and connect your FiveM server with external databases using **CreeperCloud**.
 
-### 🔌 Connecting the Database to Your FiveM Server
+You’ll find complete instructions in both English and Spanish, including:
 
-1. Open your **server.cfg** file.
-2. Add the following line with your actual values:
+- How to create a MariaDB database for your FiveM server on CreeperCloud
 
-   ```
-   set mysql_connection_string "server=HOST;uid=USERNAME;password=PASSWORD;database=DBNAME"
-   
-   ```
+- How to connect it to your FiveM server using `MariaDB` 
 
-   Example:
+- Common issues and solutions
 
-   ```
-   set mysql_connection_string "server=127.0.0.1;uid=fivemuser;password=MyPass123;database=fivem_db"
-   
-   ```
-3. Install a MySQL-compatible resource like **ghmattimysql** or **oxmysql**.
+`Please use the menu on the left to access the language and topic of your choice.`
 
-   For `oxmysql` (recommended):
-   - Add it to your `resources` folder
-   - Add `ensure oxmysql` in your `server.cfg`
-4. Restart your server.
+## 🇪🇸 Sobre este proyecto
+
+Bienvenido a la documentación de **las configuraciones para los Servidores de FiveM** creado por **itz_Secret**.  
+
+Aquí encontrarás una guía completa para configurar correctamente tu servidor de FiveM y conectarlo a una base de datos externa usando **CreeperCloud**.
+
+En esta documentación encontrarás, en español e inglés:
+
+- Cómo crear una base de datos MariaDB en CreeperCloud
+
+- Cómo conectarla a tu servidor de FiveM usando `MariaDB` 
+
+- Problemas comunes y sus soluciones
+
+`Utiliza el menú lateral para navegar entre los idiomas y secciones disponibles.`
 
 ---
 
-## 🇪🇸 Cómo Crear y Conectar Bases de Datos a FiveM usando CreeperCloud
+**Author:** itz_Secret  
 
-**Autor:** itz_Secret\
-**Discord:** `itz_Secret`\
-**Proveedor de Hosting:** [CreeperCloud](https://creepercloud.io/)
-
-### 🛠️ Crear una base de datos MySQL en CreeperCloud
-
-1. Entra en https://creepercloud.io/ e inicia sesión en tu panel.
-2. Ve a la sección **Databases** (Bases de Datos).
-3. Haz clic en **Create Database** (Crear Base de Datos).
-4. Configura:
-   - **Nombre:** por ejemplo `fivem_db`
-   - **Usuario y Contraseña:** crea credenciales seguras
-5. Una vez creada, copia:
-   - **Host/IP**
-   - **Puerto**
-   - **Usuario**
-   - **Contraseña**
-   - **Nombre de la base de datos**
-
-### 🔌 Conectar la base de datos a tu servidor de FiveM
-
-1. Abre tu archivo **server.cfg**.
-2. Añade la siguiente línea con tus datos reales:
-
-   ```
-   set mysql_connection_string "server=HOST;uid=USUARIO;password=CONTRASEÑA;database=BASEDATOS"
-   
-   ```
-
-   Ejemplo:
-
-   ```
-   set mysql_connection_string "server=127.0.0.1;uid=fivemuser;password=MiClave123;database=fivem_db"
-   
-   ```
-3. Instala un recurso compatible con MySQL como **ghmattimysql** o **oxmysql**.
-
-   Para `oxmysql` (recomendado):
-   - Añádelo a tu carpeta `resources`
-   - Pon `ensure oxmysql` en tu `server.cfg`
-4. Reinicia tu servidor.
-
----
+**Discord:** `itz_Secret`  
